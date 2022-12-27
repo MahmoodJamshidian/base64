@@ -90,12 +90,11 @@ std::string b64decode(const char *__msg)
         }
         for (uint8_t __j = 0; __j < 6 && !__e_msg; __j++)
         {
-            arr[(__i * 6) + __j] = (static_cast<char>(__l_char << __j + 2) >> 7);
+            arr[(__i * 6) + __j] = (static_cast<char>(__l_char << (__j + 2)) >> 7);
         }
     }
 
     std::string res;
-    bool __is_e_msg = false;
     __l_char = 0;
     uint8_t __cont = 0;
     __e_msg = __size * 6;

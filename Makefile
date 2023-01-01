@@ -25,9 +25,6 @@ compile-all:
 	@make cpp-compile
 	@echo done
 
-test:
-	@echo $(INCLUDE_PATH)
-
 cpp-compile:
 	$(CC) $(CC_ARGS) $(CPP_FILE) -o $(CPP_OUT_FILE)
 	@echo done
@@ -54,7 +51,7 @@ ifdef $(clean)
 endif
 	@echo done
 
-py-mingw-compile:
+py-gpp-compile:
 	@echo python: $(python)
 ifeq ($(wildcard $(INCLUDE_PATH)),)
 $(error include path not found)
